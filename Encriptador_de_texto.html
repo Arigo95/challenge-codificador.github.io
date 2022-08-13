@@ -4,20 +4,30 @@
         <meta charset="utf-8">
         <meta name="website" conten="width=device-width, initial-scale=1.0"/>
         <title>Encriptador de texto</title>
-        <link href="Encriptador_de_Texto.css" rel="stylesheet" type="text/css"/>
+        <link href="Encriptador_de_texto.css" rel="stylesheet" type="text/css"/>
+        <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet" type="text/css">
     </head>
     <body>
-        <div id="titulo" class="contenedor">
-            <h1>Encriptador de texto</h1>
+        <div class="grid-layout">
+            <div id="titulo" class="contenedor">
+                <h1> < Encr1pt@d0r d3 T3xt0 > </h1>
+            </div>
+            <div id="textarea" class="contenedor">
+                <textarea>  Ingresa texto para encriptar/desencriptar...</textarea>
+            </div>
+            <div id="igual" class="contenedor">
+                <h3> = </h3>
+            </div>
+            <div class="contenedor">
+                <div id="resultado" class="contenedor"></div>
+            </div>
+            <div id="encriptar-desencriptar" class="contenedor">
+                <button clas="botones">Encriptar</button>
+                <button clas="botones">Desencriptar</button>
+            </div>
+            <div id="copiar" class="contenedor">
+                <button clas="botones">Copiar</button>
+            </div>
         </div>
-        <div id="texto" class="contenedor">
-            <textarea>Ingresa texto a encriptar/desencriptar...</textarea>
-        </div>
-        <div id="botones" class="contenedor">
-            <button>Encriptar</button>
-            <button>Desencriptar</button>
-            <button>Copiar</button>
-        </div>
-        <div id="area" class="contenedor"></div>
     </body>
 </html>

@@ -1,0 +1,56 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    width: 100%;
+    height: 100vh;
+    margin: 0;
+    background-color: black;
+    font-size: 16px;
+}
+
+.grid-layout {
+    display: grid;
+    width: 80%;
+    height: 100%;
+    margin: 0 auto;
+    justify-content: stretch;
+    grid-template-columns: 45% 10% 45%;
+    grid-template-rows: 20% 60% 20%;
+}
+
+#titulo {
+    font-family: 'Source Code Pro', 'helvetica';
+    color: white;
+    text-align: center;
+    grid-column: 1/4;
+    line-height: 110px;
+}
+
+textarea {
+    font-family: 'Source Code Pro';
+    font-style: italic;
+    font-size: medium;
+    color: white;
+    background-color: black;
+    border-color: black;
+    margin:5%;
+    width: 90%;
+    height: 90%;
+}
+
+#resultado {
+    background-color:rgba(128, 128, 128, 0.295);
+    margin:5%;
+    width: 90%;
+    height: 90%;
+}
+
+#copiar {
+    grid-column: 3/4;
+}
+
+.contenedor {
+    border: 1px solid white;
+}
