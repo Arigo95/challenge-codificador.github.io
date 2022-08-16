@@ -54,12 +54,24 @@ textarea {
     background-color:rgba(128, 128, 128, 0.295);
     margin:5%;
     width: 90%;
-    height: 90%;
+    max-height: 90%;
+    overflow-y: auto;
+}
+
+p {
+    font-family: 'Source Code Pro', 'helvetica';
+    max-height: 100%;
+    width: 100%;
+    font-size: 1.1em;
+    color: whitesmoke;
+    padding: 0 3%;
+    text-align:left;
 }
 
 #encriptar-desencriptar, #copiar {
     display: flex;
-    justify-content: space-around ;
+    justify-content:space-around ;
+    flex-wrap: wrap;
 }
 
 #copiar {

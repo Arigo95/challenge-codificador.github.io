@@ -21,19 +21,114 @@
                 <div class="linea-blanca"></div>
             </div>
             <div>
-                <div id="resultado"></div>
+                <div id="resultado">
+                    <p></p>
+                </div>
             </div>
             <div id="encriptar-desencriptar">
-                <button>Encriptar_</button>
-                <button>Desencriptar_</button>
+                <button onclick="encriptador()" class="encriptar">Encriptar_</button>
+                <button onclick="desencriptador()" class="desencriptar">Desencriptar_</button>
+                <button onclick="limpiador()" class="limpiar">limpiar_</button>
             </div>
             <div id="copiar">
-                <button>Copiar_</button>
+                <button class="copiar">Copiar_</button>
             </div>
         </div>
     </body>
 </html>
 
 <script>
+    var textoArr = [];
+    var textoResuelto = [];
+
+    function mostrarResultado(textoResuelto) {  
+        var espacioResultado = document.querySelector("p");
+        var agregarResultado = document.createTextNode(textoResuelto);
+        espacioResultado.appendChild(agregarResultado);
+    }
+
+    function encriptador() {
+        var texto = document.querySelector('textarea').value;
+        textoArr = texto.split("");
+
+        for (let x = 0; x < textoArr.length; x++) {
+            switch (textoArr[x]) {
+                case "a":
+                    textoArr[x] = "ai";
+                    break;
+            
+                case "e":
+                    textoArr[x] = "enter";
+                    break;
+                
+                case "i":
+                    textoArr[x] = "imes";
+                    break;
+                
+                case "o":
+                    textoArr[x] = "ober";
+                    break;
+                
+                case "u":
+                    textoArr[x] = "ufat";
+                    break;
+                
+                default:
+                    break;
+            }            
+        }
+        
+        textoResuelto = textoArr.join("")
+        mostrarResultado(textoResuelto);
+    }
     
+    function desencriptador() {
+        var desencriptando = [];
+        var texto = document.querySelector('textarea').value;
+        var x = 0;
+        textoArr = texto.split("");
+
+        while (x < textoArr.length) {
+            switch (textoArr[x]) {
+                case "a":
+                    desencriptando[x] = textoArr[x];
+                    x += 2;
+                    break;
+
+                case "e":
+                    desencriptando[x] = textoArr[x];
+                    x += 5;
+                    break;
+                
+                case "i":
+                    desencriptando[x] = textoArr[x];
+                    x += 4;
+                    break;
+                
+                case "o":
+                    desencriptando[x] = textoArr[x];
+                    x += 4;
+                    break;
+                
+                case "u":
+                    desencriptando[x] = textoArr[x];
+                    x += 4;
+                    break;
+                
+                default:
+                    desencriptando[x] = textoArr[x];
+                    x ++;
+                    break;        
+            }
+        }
+        
+        textoResuelto = desencriptando.join("")
+        mostrarResultado(textoResuelto);
+    }
+
+    function limpiador() {
+        document.querySelector('p').innerHTML = '';
+        document.querySelector('textarea').value = '';
+    }
+
 </script>
