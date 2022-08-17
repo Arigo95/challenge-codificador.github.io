@@ -1,5 +1,6 @@
 * {
     box-sizing: border-box;
+    font-family: 'Source Code Pro', 'helvetica';
 }
 
 body {
@@ -17,21 +18,22 @@ body {
     margin: 0 auto;
     justify-content: stretch;
     grid-template-columns: 45% 10% 45%;
-    grid-template-rows: 20% 60% 20%;
+    grid-template-rows: 15% 60% 20%;
 }
 
 #titulo {
-    font-family: 'Source Code Pro', 'helvetica';
     color: white;
-    text-align: center;
     grid-column: 1/4;
-    line-height: 110px;
     letter-spacing: 2px;
-    font-size: 1.7em;
 }
-
+h1 {
+    margin: 0;
+    font-size: 2em;
+    height: 100%;
+    text-align: center;
+    line-height:500%;
+}
 textarea {
-    font-family: 'Source Code Pro';
     font-style: italic;
     font-size: medium;
     color: whitesmoke;
@@ -50,7 +52,7 @@ textarea {
     color: gray;
 }
 
-#resultado {
+#contenedor-resultado {
     background-color:rgba(128, 128, 128, 0.295);
     margin:5%;
     width: 90%;
@@ -59,7 +61,6 @@ textarea {
 }
 
 p {
-    font-family: 'Source Code Pro', 'helvetica';
     max-height: 100%;
     width: 100%;
     font-size: 1.1em;
@@ -68,13 +69,13 @@ p {
     text-align:left;
 }
 
-#encriptar-desencriptar, #copiar {
+#encriptar-desencriptar, #contenedor-copiar {
     display: flex;
     justify-content:space-around ;
     flex-wrap: wrap;
 }
 
-#copiar {
+#contenedor-copiar {
     grid-column: 3/4;
 }
 
@@ -100,24 +101,48 @@ p {
 button {
     color: whitesmoke;
     background-color: black;
-    font-family: 'Source Code Pro', 'helvetica';
     width: 40%;
     height: 30%;
-    font-weight: bolder;
-    letter-spacing: 1px;
-    font-size: medium;
-    border: white solid 1px;
+    letter-spacing: 0.0625em;
+    border: white solid 0.0625em;
     border-radius: 3%;
-    font-size: 1.3em;
+    font-size: 1.1em;
+    cursor: pointer;
+    box-shadow: 0 0.5em whitesmoke;
+    margin-top: 5%;
 }
 
-button:hover {
-    background-color:whitesmoke ;
-    color: black;
+button:active {
+    box-shadow: 0 0.3em whitesmoke;
+    transform: translateY(0.2em);
 }
 
-@media (max-width: 600px) {
+@media (max-width: 700px) {
     body {
+        letter-spacing: normal;
         font-size: 10px;
+    }
+    .grid-layout {
+        grid-template-columns: 47.5% 5% 47.5%;
+        grid-template-rows: 15% 60% 20%;   
+        width: 95%;
+    }
+    h1 {
+        line-height: 550%;
+    }
+    .linea-blanca, .medio {
+        height: 1%;
+        width: 80%;
+    }
+    #encriptar-desencriptar, #contenedor-copiar {
+        padding-top: 0.5em;
+    }
+    #contenedor-resultado {
+        overflow-y: scroll;
+        -webkit-overflow-scrolling: touch;
+    }
+    button {
+        width: 70%;
+        height: 25%;
     }
 }

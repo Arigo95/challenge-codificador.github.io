@@ -2,7 +2,7 @@
 <html>
     <head>
         <meta charset="utf-8">
-        <meta name="website" conten="width=device-width, initial-scale=1.0"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
         <title>Encriptador de texto</title>
         <link href="Encriptador_de_texto.css" rel="stylesheet" type="text/css"/>
         <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet" type="text/css">
@@ -10,7 +10,7 @@
     <body>
         <div class="grid-layout">
             <div id="titulo">
-                <h1> < Encr1pt@d0r d3 T3xt0 > </h1>
+                <h1>Encr1pt@d0r d3 T3xt0 </h1>
             </div>
             <div id="textarea">
                 <textarea placeholder="_Ingresa texto para encriptar/desencriptar..."></textarea>
@@ -21,17 +21,17 @@
                 <div class="linea-blanca"></div>
             </div>
             <div>
-                <div id="resultado">
-                    <p></p>
+                <div id="contenedor-resultado">
+                    <p id="resultado"></p>
                 </div>
             </div>
             <div id="encriptar-desencriptar">
                 <button onclick="encriptador()" class="encriptar">Encriptar_</button>
                 <button onclick="desencriptador()" class="desencriptar">Desencriptar_</button>
-                <button onclick="limpiador()" class="limpiar">limpiar_</button>
+                <button onclick="limpiador()" class="limpiar">Limpiar_</button>
             </div>
-            <div id="copiar">
-                <button class="copiar">Copiar_</button>
+            <div id="contenedor-copiar">
+                <button onclick="copiando()" id="copiar">Copiar_</button>
             </div>
         </div>
     </body>
@@ -127,8 +127,17 @@
     }
 
     function limpiador() {
+        var btnTexto = document.getElementById('copiar')
         document.querySelector('p').innerHTML = '';
         document.querySelector('textarea').value = '';
+        btnTexto.innerText = "Copiar_"
     }
 
+    function copiando() {
+        var textoAcopiar = document.getElementById('resultado').innerText
+        var btnTexto = document.getElementById('copiar')
+        navigator.clipboard.writeText(textoAcopiar);
+        btnTexto.innerText = "Texto copiado_"
+    }
+        
 </script>
